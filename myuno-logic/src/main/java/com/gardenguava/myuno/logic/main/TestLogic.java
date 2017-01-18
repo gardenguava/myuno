@@ -1,14 +1,10 @@
 package com.gardenguava.myuno.logic.main;
 
-import java.util.ArrayList;
-
 import com.gardenguava.myuno.logic.GameLogic;
 import com.gardenguava.myuno.logic.base.Card;
 import com.gardenguava.myuno.logic.base.Deck;
 import com.gardenguava.myuno.logic.base.DeckDefinition;
 import com.gardenguava.myuno.logic.base.Player;
-import com.gardenguava.myuno.logic.type.Color;
-import com.gardenguava.myuno.logic.type.Rank;
 
 public class TestLogic {
 	public static void main(String[] args) {
@@ -21,22 +17,11 @@ public class TestLogic {
 		for (int i = 0; i < 4; i++) {
 			logic.addPlayer(new Player());
 		}
-
-		ArrayList<Card> cards = null;
+		
 		Card selectedCard = null;
 		System.out.println("Starting Card: " + logic.getCurrentDeck().getCurrentCard());
 
 		for (int i = 0; i < 18; i++) {
-			cards = logic.getCurrentPlayer().getEligibleCards(null);
-			selectedCard = selectedCard = cards.get(0);
-			/*if(cards.size() == 0) {
-				continue;
-			}
-			selectedCard = cards.get(0);
-			if(selectedCard.getRank() == Rank.WILD || selectedCard.getRank() == Rank.WILD_DRAW_FOUR) {
-				System.out.println("--> Color changed to YELLOW");
-				logic.setChoosenColor(Color.YELLOW);
-			}*/
 			logic.throwCard(selectedCard);
 			showInformation(logic);
 		}
